@@ -1,0 +1,22 @@
+Clean Code Practices
+Meaningful Names: The class names (Account, Bank) and method names (deposit, withdraw, createAccount) clearly describe their purpose. Variable names (balance, accountNumber) are also descriptive.
+This improves readability. (Screenshot: Showing class and method names in the IDE)
+Small Methods: Methods are kept concise and focused. For example, deposit() only handles the deposit logic, and withdraw() only handles the withdrawal logic.
+This makes the code easier to understand and test. (Screenshot: Showing the deposit() method, highlighting its small size and focused purpose)
+Comments (Where Needed): Comments are used sparingly but effectively to explain anything that might not be immediately obvious, such as the logic behind specific calculations or error handling.
+Project Explanation
+The Simple Banking Application simulates basic banking operations. It has two main classes:
+
+Account: Represents a bank account with an account number and balance. It provides methods for depositing and withdrawing money.
+Bank: Manages a collection of accounts. It provides methods for creating new accounts and retrieving existing accounts.
+The tests cover creating accounts (including handling duplicate account numbers), depositing money (including handling negative deposit amounts), and withdrawing money (including handling insufficient funds and negative withdrawal amounts).
+
+Dependencies
+The project uses JUnit 5 for unit testing. The dependencies are included in the pom.xml file and are downloaded from Maven Central Repository (https://mvnrepository.com/).
+ Specifically, the junit-jupiter-api and junit-jupiter-engine dependencies are included.
+
+QAP (Potential Problems)
+One potential problem I anticipated was incorrect handling of concurrent access to the same account (e.g., two threads trying to withdraw money simultaneously).
+In this simplified version, I haven't implemented any explicit thread safety mechanisms.
+In a real-world banking application, this would be a critical concern, and you'd need to use techniques like locks or atomic variables to prevent race conditions and ensure data integrity.
+I would address this in a more complete version of the application.
